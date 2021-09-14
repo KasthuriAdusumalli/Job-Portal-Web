@@ -1,0 +1,79 @@
+body {
+  overflow-x: hidden;
+}
+
+.gradient {
+  padding: 5em 0;
+  width: 100%;
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+  background-image: linear-gradient(
+    90deg,
+    rgb(213, 51, 105) 0%,
+    rgb(218, 174, 81) 100%
+  );
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-repeat: initial;
+  background-clip: initial;
+  background-color: initial;
+}
+
+.background-img {
+  padding: 65px 0px;
+  background-image: url("https://technext.github.io/space-dynamic/assets/images/contact-bg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin-top: 3em;
+}
+
+#profile {
+  background-color: #fff;
+  padding: 60px 30px;
+  border-radius: 20px;
+  margin: auto 2em;
+  input {
+    height: 46px;
+    border-radius: 33px;
+    background-color: #d1f3ff;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: 300;
+    color: #2a2a2a;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+  }
+  .user_name {
+    color: #fff !important;
+    padding-bottom: 2em !important;
+  }
+  .profile_btn {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: capitalize;
+    padding: 12px 25px;
+    border-radius: 23px;
+    letter-spacing: 0.25px;
+    border: none;
+    outline: none;
+    transition: all 0.3s;
+    background-image: linear-gradient(
+      to right,
+      #ff512f 0%,
+      #dd2476 51%,
+      #ff512f 100%
+    );
+    cursor: pointer;
+    &:hover {
+      background-position: right center;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}

@@ -2,9 +2,9 @@ import { AbstractControl, ValidatorFn } from '@angular/forms';
 
 export default class Validation {
   static match(controlName: string, checkControlName: string): ValidatorFn {
-    return (controls:any = AbstractControl) => {
+    return (controls: any = AbstractControl) => {
       const control: any = controls.get(controlName);
-      const checkControl : any = controls.get(checkControlName);
+      const checkControl: any = controls.get(checkControlName);
 
       if (checkControl.errors && !checkControl.errors.matching) {
         return null;
@@ -17,5 +17,15 @@ export default class Validation {
         return null;
       }
     };
+  }
+
+  static numeric(control: AbstractControl) {
+    let val = control.value;
+
+    if (val === null || val === '') return null;
+
+    if (!val.toString().match(/^[0-9]+(\.?[0-9]+)?$/))
+      return { invalidNumber: true };
+    return null;
   }
 }
