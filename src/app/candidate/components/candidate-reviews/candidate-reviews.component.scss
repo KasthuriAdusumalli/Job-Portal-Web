@@ -1,0 +1,55 @@
+.background {
+  margin-top: 3em;
+  min-height: 100vh;
+  padding-top: 4em;
+  background-image: linear-gradient(
+    to right,
+    #1cd8d2 0%,
+    #93edc7 51%,
+    #1cd8d2 100%
+  );
+}
+
+#reviews {
+  background-color: #fff;
+  padding: 60px 30px;
+  border-radius: 20px;
+  margin: auto 2em;
+  textarea {
+    line-height: 2.5em;
+    border-radius: 33px;
+    background-color: #d1f3ff;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: 300;
+    color: #2a2a2a;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+  }
+  .review_btn {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: capitalize;
+    padding: 12px 25px;
+    border-radius: 23px;
+    letter-spacing: 0.25px;
+    border: none;
+    outline: none;
+    transition: all 0.3s;
+    background-image: linear-gradient(
+      to right,
+      #43cea2 0%,
+      #185a9d 51%,
+      #43cea2 100%
+    );
+    cursor: pointer;
+    &:hover {
+      background-position: right center;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}

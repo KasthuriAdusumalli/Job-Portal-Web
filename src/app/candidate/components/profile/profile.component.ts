@@ -6,11 +6,10 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import Validation from '../../utils/validation';
+import Validation from '../../../utils/validation';
 import Swal from 'sweetalert2';
-import { RestApiService } from '../../_shared/rest-api.service';
+import { RestApiService } from '../../../_shared/rest-api.service';
 import { environment } from 'src/environments/environment';
-import { swalProviderToken } from '@sweetalert2/ngx-sweetalert2/lib/di';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -117,31 +116,31 @@ export class ProfileComponent implements OnInit {
       });
       return;
     }
-    // this.apiService
-    //   .update(
-    //     this.userDetails.id,
-    //     this.form.value,
-    //     environment.baseUrl,
-    //     'update'
-    //   )
-    //   .subscribe(
-    //     (response) => {
-    //       console.log('update', response);
-    //       localStorage.setItem('userDetails', JSON.stringify(response));
-    //       this.userDetails = response;
-    //       this.getUser();
-    //       this.Toast.fire({
-    //         icon: 'success',
-    //         title: 'Profile updated successfully!!',
-    //       });
-    //     },
-    //     (err) => {
-    //       this.Toast.fire({
-    //         icon: 'error',
-    //         title: err,
-    //       });
-    //       console.log(err);
-    //     }
-    //   );
+    this.apiService
+      .update(
+        this.userDetails.id,
+        this.form.value,
+        environment.baseUrl,
+        'update'
+      )
+      .subscribe(
+        (response) => {
+          console.log('update', response);
+          localStorage.setItem('userDetails', JSON.stringify(response));
+          this.userDetails = response;
+          this.getUser();
+          this.Toast.fire({
+            icon: 'success',
+            title: 'Profile updated successfully!!',
+          });
+        },
+        (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title: err,
+          });
+          console.log(err);
+        }
+      );
   }
 }

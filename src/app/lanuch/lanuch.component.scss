@@ -1,0 +1,60 @@
+.launch-screen {
+  overflow-x: hidden;
+  background-image: linear-gradient(
+    to right,
+    #4ac29a 0%,
+    #bdfff3 51%,
+    #4ac29a 100%
+  );
+  .header {
+    // color: #fff;
+    margin: 2em auto;
+    background: -webkit-linear-gradient(#0575e6, #021b79);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  min-height: 100vh;
+}
+
+.img-icon {
+  transition: all 0.5s ease-out 0s;
+  width: 100%;
+  vertical-align: middle;
+}
+.ovf-hidden {
+  overflow: hidden;
+  img {
+    transition: 1s ease;
+    border-radius: 10px;
+    &:hover {
+      border-radius: 50%;
+      transition: 1s ease;
+    }
+  }
+
+  .nav-btn {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: capitalize;
+    padding: 12px 25px;
+    border-radius: 23px;
+    letter-spacing: 0.25px;
+    outline: none;
+    border: none;
+    margin: 1em auto;
+    display: block;
+    border: 2px solid #ff8235;
+    background-image: linear-gradient(
+      to right,
+      #30e8bf 0%,
+      #ff8235 51%,
+      #30e8bf 100%
+    );
+    &:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}

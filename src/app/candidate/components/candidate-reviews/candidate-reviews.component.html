@@ -1,0 +1,47 @@
+<div class="container-fluid background">
+  <app-header></app-header>
+  <div class="row align-items-center justify-content-center">
+    <div class="col-lg-6">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" id="reviews">
+        <div class="row">
+          <div class="form-group">
+            <label>Rating</label>
+            <p-rating formControlName="rating" [cancel]="false"></p-rating>
+            <div *ngIf="submitted && f.rating.errors" class="invalid-feedback">
+              <div *ngIf="f.rating.errors.required">Rating is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Comments</label>
+            <textarea
+              class="form-control"
+              formControlName="comments"
+              placeholder="Enter your comments here..."
+              rows="5"
+              cols="20"
+              [ngClass]="{
+                'is-invalid': submitted && f.comments.errors
+              }"
+            ></textarea>
+            <div
+              class="invalid-feedback"
+              *ngIf="submitted && f.comments.errors"
+            >
+              <div *ngIf="f.comments.errors.required">Comments is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="review_btn float-right">Add</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-5 text-center">
+      <img
+        src="https://technext.github.io/space-dynamic/assets/images/about-left-image.png"
+      />
+    </div>
+  </div>
+</div>

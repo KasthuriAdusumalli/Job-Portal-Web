@@ -1,18 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { JobDetailsComponent } from './components/job-details/job-details.component';
-
+import { AuthenticationGuard } from './authentication.guard';
+import { DashboardComponent } from './candidate/components/dashboard/dashboard.component';
+import { LanuchComponent } from './lanuch/lanuch.component';
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: '', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'applied-jobs', component: JobDetailsComponent },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import(`./admin/admin.module`).then((module) => module.AdminModule),
+  },
+  {
+    path: 'candidate',
+    loadChildren: () =>
+      import(`./candidate/candidate.module`).then(
+        (module) => module.CandidateModule
+      ),
+  },
+  { path: '', component: LanuchComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

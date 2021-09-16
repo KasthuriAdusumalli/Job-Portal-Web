@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   baseUrl: 'http://localhost:2020/candidate/',
   jobsBaseurl: 'http://localhost:8080/apply-job/',
+  adminApiUrl: 'http://localhost:8081/job-requirment/',
 };
 
 /*

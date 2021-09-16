@@ -6,9 +6,9 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import Validation from '../utils/validation';
+import Validation from '../../utils/validation';
 import Swal from 'sweetalert2';
-import { RestApiService } from '../_shared/rest-api.service';
+import { RestApiService } from '../../_shared/rest-api.service';
 import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-register',
@@ -124,7 +124,7 @@ export class RegisterComponent implements OnInit {
               icon: 'success',
               title: 'Registration success!!',
             });
-            this.router.navigateByUrl('/dashboard');
+            this.router.navigateByUrl('/candidate/dashboard');
           }
         },
         (error: any) => {

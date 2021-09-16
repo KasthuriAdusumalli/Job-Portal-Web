@@ -14,9 +14,11 @@
       'position',
       'primarySkill',
       'secondarySkill',
-      'otherSkills',
-      'postedDate',
-      'experience'
+      'otherSkill',
+      'responsebilities',
+      'experience',
+      'location',
+      'salary'
     ]"
   >
     <ng-template pTemplate="caption">
@@ -53,11 +55,11 @@
         <th pSortableColumn="secondarySkill">
           Secondary Skill <p-sortIcon field="secondarySkill"></p-sortIcon>
         </th>
-        <th pSortableColumn="otherSkills">
-          Other Skills <p-sortIcon field="otherSkills"></p-sortIcon>
+        <th pSortableColumn="otherSkill">
+          Other Skills <p-sortIcon field="otherSkill"></p-sortIcon>
         </th>
-        <th pSortableColumn="postedDate">
-          Posted Date <p-sortIcon field="postedDate"></p-sortIcon>
+        <th pSortableColumn="responsebilities">
+          Responsebilities <p-sortIcon field="responsebilities"></p-sortIcon>
         </th>
         <th pSortableColumn="experience">
           Expe Required <p-sortIcon field="experience"></p-sortIcon>
@@ -65,32 +67,31 @@
         <th pSortableColumn="location">
           Location <p-sortIcon field="location"></p-sortIcon>
         </th>
+        <th pSortableColumn="salary">
+          Salary <p-sortIcon field="salary"></p-sortIcon>
+        </th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
       <tr>
         <td *ngFor="let col of columns">
-          {{
-            col.field != "postedDate"
-              ? rowData[col.field]
-              : (rowData[col.field] | date: "dd-MMM-yyyy")
-          }}
+          {{ rowData[col.field] }}
         </td>
       </tr>
     </ng-template>
     <!-- <ng-template pTemplate="paginatorleft">
-      <p-button
-        type="button"
-        icon="pi pi-plus"
-        styleClass="p-button-text"
-      ></p-button>
-    </ng-template>
-    <ng-template pTemplate="paginatorright">
-      <p-button
-        type="button"
-        icon="pi pi-cloud"
-        styleClass="p-button-text"
-      ></p-button>
-    </ng-template> -->
+        <p-button
+          type="button"
+          icon="pi pi-plus"
+          styleClass="p-button-text"
+        ></p-button>
+      </ng-template>
+      <ng-template pTemplate="paginatorright">
+        <p-button
+          type="button"
+          icon="pi pi-cloud"
+          styleClass="p-button-text"
+        ></p-button>
+      </ng-template> -->
   </p-table>
 </div>

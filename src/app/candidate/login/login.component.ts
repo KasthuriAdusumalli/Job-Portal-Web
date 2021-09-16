@@ -8,7 +8,7 @@ import {
   FormControl,
 } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { RestApiService } from '../_shared/rest-api.service';
+import { RestApiService } from '../../_shared/rest-api.service';
 import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-login',
@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
           icon: 'success',
           title: 'Sign in Success!!',
         });
-        this.router.navigateByUrl('/dashboard');
+        this.router.navigateByUrl('/candidate/dashboard');
       },
       (error) => {
         console.log('err', error);

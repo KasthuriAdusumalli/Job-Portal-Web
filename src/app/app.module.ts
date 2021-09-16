@@ -5,28 +5,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { UiThemeModule } from './ui-theme/ui-theme.module';
 
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { HttpClientModule } from '@angular/common/http';
-import { JobDetailsComponent } from './components/job-details/job-details.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { AuthServiceService } from './_services/auth-service.service';
+import { LanuchComponent } from './lanuch/lanuch.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RegisterComponent,
-    LoginComponent,
-    JobDetailsComponent,
-    DashboardComponent,
-    HeaderComponent,
-    ProfileComponent,
-  ],
+  declarations: [AppComponent, LanuchComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,9 +22,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     BrowserAnimationsModule,
     SweetAlert2Module.forRoot(),
     NgbModule,
-    UiThemeModule,
   ],
-  providers: [],
+  providers: [AuthServiceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
