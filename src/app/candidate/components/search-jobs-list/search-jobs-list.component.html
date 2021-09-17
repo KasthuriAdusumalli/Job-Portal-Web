@@ -70,12 +70,23 @@
         <th pSortableColumn="salary">
           Salary <p-sortIcon field="salary"></p-sortIcon>
         </th>
+        <th>Action</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
       <tr>
         <td *ngFor="let col of columns">
           {{ rowData[col.field] }}
+        </td>
+        <td>
+          <button
+            pButton
+            pRipple
+            label="Apply Job"
+            icon="pi pi-plus"
+            class="p-button-success p-mr-2"
+            (click)="applyjob(rowData)"
+          ></button>
         </td>
       </tr>
     </ng-template>
