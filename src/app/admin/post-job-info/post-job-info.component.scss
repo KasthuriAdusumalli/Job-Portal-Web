@@ -1,0 +1,27 @@
+h1 {
+  color: goldenrod;
+}
+input.ng-Invalid {
+  border-left-color: 7px red;
+}
+input.ng-valid {
+  border-left-color: 5px green;
+}
+
+.b {
+  background-color: goldenrod;
+  color: white;
+  align-items: center;
+  font-size: large;
+  font-weight: bold;
+  /* font-stretch: expanded; */
+  padding: 7px;
+  margin: 10;
+}
+.jumbotron {
+  background: #abb1b8;
+}
+.mx-auto {
+  padding: 15;
+  margin-top: 5%;
+}

@@ -1,0 +1,69 @@
+<div class="col-md-5 offset-md-1">
+  <h3 class="text-primary">Admin Login</h3>
+  <form #loginform="ngForm" (ngSubmit)="onSubmit()">
+    <small class="text-danger">{{ msg }}</small>
+    <div class="form-group">
+      <label> emailId</label>
+      <input
+        type="text"
+        class="form-control"
+        id="emailId"
+        placeholder="Enter emailId"
+        [(ngModel)]="admin.emailId"
+        name="emailId"
+        required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        #emailId="ngModel"
+        [class.is-invalid]="emailId.invalid && emailId.touched"
+      />
+      <div *ngIf="emailId.errors && emailId.invalid && emailId.touched">
+        <small class="text-danger" *ngIf="emailId.errors.required"
+          >emailId is required field</small
+        >
+        <small class="text-danger" *ngIf="emailId.errors.pattern"
+          >Enter valid email</small
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <label> password</label>
+      <input
+        type="text"
+        class="form-control"
+        id="password"
+        placeholder="Enter password"
+        [(ngModel)]="admin.password"
+        name="password"
+        required
+        #password="ngModel"
+        [class.is-invalid]="password.invalid && password.touched"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="password.valid || password.untouched"
+        >Password is Required field</small
+      >
+    </div>
+
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember" /> Remember me</label>
+    </div>
+
+    <br />
+    <button
+      [disabled]="loginform.form.invalid"
+      type="submit"
+      class="btn btn-info"
+    >
+      Login
+    </button>
+
+    <small class="float-right btextual" [routerLink]="['/admin/register']"
+      >New User ? Register here</small
+    >
+
+    <!-- <div class="img">
+    <img src="./assets/job-portal.png"> -->
+    <!-- </div>  -->
+  </form>
+</div>

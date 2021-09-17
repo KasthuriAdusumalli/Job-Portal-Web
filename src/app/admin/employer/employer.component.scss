@@ -1,0 +1,34 @@
+ul {
+  border: 1px solid #e7e7e7;
+  list-style-type: none;
+  margin: 0;
+  padding: 20;
+  overflow: hidden;
+  background-color: #dddddd;
+  font-weight: bold;
+  width: max-content;
+}
+li :hover {
+  background-color: grey;
+  width: max-content;
+}
+.navbar-brand {
+  width: fit-content;
+  background-color: goldenrod;
+  font-weight: bold;
+}
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+.nav {
+  margin: 0%;
+  padding-right: 0%;
+}
+.nav-item {
+  width: max-content;
+  padding-inline-end: 0%;
+  margin-left: 0%;
+}

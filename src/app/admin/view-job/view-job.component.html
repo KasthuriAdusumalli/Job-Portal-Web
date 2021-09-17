@@ -1,0 +1,29 @@
+<div class="container align-items-center">
+  <div class="row">
+    <div class="a">View Posted Job Requirements</div>
+    <table border="1">
+      <tr>
+        <th>Job Code</th>
+        <th>Job position</th>
+        <th>Job location</th>
+        <th>Primary Skill</th>
+        <th>Seondary Skill</th>
+        <th>Other Skill</th>
+        <th>Job Responsebilities</th>
+        <th>Experience</th>
+        <th>Salary</th>
+      </tr>
+      <tr *ngFor="let data of data">
+        <td>{{ data.jobCode }}</td>
+        <td>{{ data.position }}</td>
+        <td>{{ data.location }}</td>
+        <td>{{ data.primarySkill }}</td>
+        <td>{{ data.secondarySkill }}</td>
+        <td>{{ data.otherSkill }}</td>
+        <td>{{ data.responsebilities }}</td>
+        <td>{{ data.experience }}</td>
+        <td>{{ data.salary }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

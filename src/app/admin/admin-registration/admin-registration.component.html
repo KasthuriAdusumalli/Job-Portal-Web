@@ -1,0 +1,137 @@
+<div class="col-md-5 offset-md-1">
+  <h3 class="text-primary">Admin Registration</h3>
+  <form #registerform="ngForm" (ngSubmit)="onSubmit()">
+    <small class="text-danger">{{ msg }}</small>
+    <div class="form-group">
+      <label>FirstName</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        placeholder="Enter firstName"
+        required
+        [(ngModel)]="admin.firstName"
+        name="firstName"
+        required
+        pattern="[a-z/A-Z]{2,}$"
+        #firstName="ngModel"
+        [class.is-invalid]="firstName.invalid && firstName.touched"
+      />
+
+      <div *ngIf="firstName.errors && firstName.invalid && firstName.touched">
+        <small class="text-danger" *ngIf="firstName.errors.required"
+          >firstName is required field</small
+        >
+        <small class="text-danger" *ngIf="firstName.errors.pattern"
+          >Enter valid firstName</small
+        >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>LastName</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        placeholder="Enter lastName"
+        [(ngModel)]="admin.lastName"
+        name="lastName"
+        required
+        pattern="[a-z/A-Z]{2,}$"
+        #lastName="ngModel"
+        [class.is-invalid]="lastName.invalid && lastName.touched"
+      />
+      <div *ngIf="lastName.errors && lastName.invalid && lastName.touched">
+        <small class="text-danger" *ngIf="lastName.errors.required"
+          >lastName is required field</small
+        >
+        <small class="text-danger" *ngIf="lastName.errors.pattern"
+          >Enter valid lastName</small
+        >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label> EmailId</label>
+      <input
+        type="text"
+        class="form-control"
+        id="emailId"
+        placeholder="Enter emailId"
+        [(ngModel)]="admin.emailId"
+        name="emailId"
+        required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        #emailId="ngModel"
+        [class.is-invalid]="emailId.invalid && emailId.touched"
+      />
+      <div *ngIf="emailId.errors && emailId.invalid && emailId.touched">
+        <small class="text-danger" *ngIf="emailId.errors.required"
+          >emailId is required field</small
+        >
+        <small class="text-danger" *ngIf="emailId.errors.pattern"
+          >Enter valid email</small
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <label> Password</label>
+      <input
+        type="text"
+        class="form-control"
+        id="password"
+        placeholder="Enter password"
+        [(ngModel)]="admin.password"
+        name="password"
+        required
+        #password="ngModel"
+        [class.is-invalid]="password.invalid && password.touched"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="password.valid || password.untouched"
+        >Password is Required field</small
+      >
+    </div>
+    <div class="form-group">
+      <label> ConfirmPassword</label>
+      <input
+        type="text"
+        class="form-control"
+        id="confirmPassword"
+        placeholder="Enter confirmPassword"
+        [(ngModel)]="admin.confirmPassword"
+        name="confirmPassword"
+        required
+        required
+        #confirmPassword="ngModel"
+        [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="confirmPassword.valid || confirmPassword.untouched"
+        >ConfirmPassword is Required field</small
+      >
+      <small
+        class="text-danger"
+        [class.d-none]="
+          confirmPassword.value == password.value || confirmPassword.untouched
+        "
+        >Password & Confirm password must be same</small
+      >
+    </div>
+
+    <br />
+    <button
+      [disabled]="registerform.form.invalid"
+      type="submit"
+      class="btn btn-info"
+    >
+      Register
+    </button>
+    <small class="float-right btextual" [routerLink]="['/admin/login']"
+      >ExistingUser ? Loginhere</small
+    >
+  </form>
+</div>

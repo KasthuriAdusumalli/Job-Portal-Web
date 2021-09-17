@@ -1,0 +1,234 @@
+<div class="jumbotron">
+  <div class="container align-items-center">
+    <div class="col-sm-5 align-items-center">
+      <form [formGroup]="add_job_requ_form" (ngSubmit)="onSubmit()">
+        <div class="b">Add Job requirement details</div>
+        <div *ngIf="alert" class="alert alert-success" role="alert">
+          <strong>Success!</strong>
+          <br />
+          Job Posted Successfully,
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="form-group">
+          <label>Job Code:</label>
+          <input
+            type="text"
+            formControlName="jobCode"
+            placeholder="Enter job code "
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted }"
+          />
+          <div
+            *ngIf="f.jobCode.touched && f.jobCode.errors"
+            class="alert alert-danger"
+          >
+            <span *ngIf="f.jobCode.errors.required"
+              >Job code is required !</span
+            >
+            <span *ngIf="f.jobCode.errors.maxlength"
+              >Job code cant be more than 6 charchters !</span
+            >
+            <span *ngIf="f.jobCode.errors.pattern"
+              >Job code must be numeric !</span
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Job position:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="position"
+            placeholder="Enter Designation"
+            [ngClass]="{ 'is-invalid': submitted }"
+          />
+          <div
+            *ngIf="f.position.touched && f.position.invalid"
+            class="alert alert-danger"
+          >
+            <span *ngIf="f.position.errors?.required"
+              >Job position is required </span
+            ><br />
+            <span *ngIf="f.position.errors?.minlength"
+              >Job position min lenghth is 3 char only!
+            </span>
+            <span *ngIf="f.position.errors?.maxlength"
+              >Job position max lenghth is 15 char only !
+            </span>
+            <span *ngIf="f.position.errors?.pattern"
+              >Job position must contain charachters only !
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Job location:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="location"
+            placeholder="Enter job location"
+            [ngClass]="{ 'is-invalid': submitted }"
+          />
+          <div
+            *ngIf="f.location.touched && f.location.invalid"
+            class="alert alert-danger"
+          >
+            <span *ngIf="f.location.errors?.required"
+              >Job location is required !
+            </span>
+            <span *ngIf="f.location.errors?.minlength"
+              >Job location must contain at leat 3 charachters !</span
+            >
+            <span *ngIf="f.location.errors?.maxlength"
+              >Job location max lenghth is 15 charachters !</span
+            >
+            <span *ngIf="f.location.errors?.pattern"
+              >Job location must contain charachters only !</span
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Primary skill:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="primarySkill"
+            placeholder="Enter primary skill"
+            [ngClass]="{ 'is-invalid': submitted && f.primarySkill.errors }"
+          />
+          <div
+            *ngIf="f.primarySkill.touched && f.primarySkill.errors"
+            class="alert alert-danger"
+          >
+            <span *ngIf="f.primarySkill.errors?.required"
+              >Primary skill is required !
+            </span>
+            <span *ngIf="f.primarySkill.errors?.minlength"
+              >Primary skill must contain at leat 3 charachters !
+            </span>
+            <span *ngIf="f.primarySkill.errors?.maxlength"
+              >Primary skill max lenghth is 15 charachters !
+            </span>
+            <span *ngIf="f.primarySkill.errors?.pattern"
+              >Primary skill must contain charachters only !
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Secondary skill:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="secondarySkill"
+            placeholder="Enter Secondary skill"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Other skill:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="otherSkill"
+            placeholder="Enter other skill"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Responsebilities:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="responsebilities"
+            placeholder="Enter Responsebilities"
+            [ngClass]="{ 'is-invalid': submitted && f.responsebilities.errors }"
+          />
+          <div
+            *ngIf="f.responsebilities.touched && f.responsebilities.errors"
+            class="alert alert-danger"
+          >
+            <span *ngIf="f.responsebilities.errors?.required"
+              >Job responsebilities are required !
+            </span>
+            <span *ngIf="f.responsebilities.errors?.minlength"
+              >Job responsebilities must contain at leat 3 charachters !
+            </span>
+            <span *ngIf="f.responsebilities.errors?.maxlength"
+              >Job responsebilities max lenghth is 15 charachters !
+            </span>
+            <span *ngIf="f.responsebilities.errors?.pattern"
+              >Job responsebilities must contain charachters only !
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Experience:</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="experience"
+            placeholder="Enter Experience"
+            [ngClass]="{ 'is-invalid': submitted && f.experience.invalid }"
+          />
+          <div
+            *ngIf="f.experience.touched && f.experience.errors"
+            class="alert alert-danger"
+          >
+            <span *ngIf="f.experience.errors?.required"
+              >Experience is required !</span
+            >
+            <!-- <span *ngIf="f.experience.errors?.maxlength">Experience max lenghth is 2 charachters only !</span> -->
+            <span *ngIf="f.experience.errors?.pattern"
+              >Experience should be numeric !</span
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Salary:</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="salary"
+            placeholder="Enter Salary"
+            [ngClass]="{ 'is-invalid': submitted && f.salary.errors }"
+          />
+          <div
+            *ngIf="f.salary.touched && f.salary.errors"
+            class="alert alert-danger"
+          >
+            <span *ngIf="f.salary.errors.required">Salary is required </span>
+            <span *ngIf="f.salary.errors?.pattern"
+              >Salary must be in numbers !
+            </span>
+          </div>
+        </div>
+        <div class="col-12">
+          <button
+            type="submit"
+            [disabled]="add_job_requ_form.invalid"
+            class="btn btn-primary active"
+          >
+            Post job
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="mx-auto" style="width: 50px">
+      <div class="col-md-4 align-items-center">
+        <img
+          src="../../assets/img/cvb.png"
+          class="rounded mx-auto d-block"
+          width="500"
+          height="600"
+        />
+      </div>
+    </div>
+  </div>
+</div>

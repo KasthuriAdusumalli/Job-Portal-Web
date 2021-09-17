@@ -1,0 +1,33 @@
+div.a {
+  background-color: rgba(80, 130, 0, 0.829);
+  align-items: center;
+  font-size: x-large;
+  font-weight: bold;
+  font-stretch: expanded;
+  padding: 15px;
+}
+.btn {
+  background-color: indigo;
+  margin-right: 5%;
+  margin-left: 20%;
+}
+.btn-primary {
+  background-color: indigo;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.col-centered {
+  align-items: center;
+  float: none;
+  margin: 0 auto;
+}
+
+.row {
+  background: #dbdfe5;
+}
+.demo-content {
+  padding: 25px;
+  font-size: 18px;
+  background: #abb1b8;
+  text-align: center;
+}
